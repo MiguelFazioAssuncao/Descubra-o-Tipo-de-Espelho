@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Tipo de Espelho</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://images.vexels.com/content/220934/preview/round-wall-mirror-ornate-illustration-12f7e5.png">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Descubra o Tipo de Espelho</h1>
+            
+            <div class="form-group">
+                <label for="unit">Escolha a unidade de medida:</label>
+                <select id="unit" name="unit">
+                    <option value="cm">Centímetros (cm)</option>
+                    <option value="m">Metros (m)</option>
+                    <option value="mm">Milímetros (mm)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="focus">Foco:</label>
+                <input type="number" id="focus" name="focus" placeholder="Insira o foco">
+            </div>
+
+            <div class="form-group">
+                <label for="distance">Distância:</label>
+                <input type="number" id="distance" name="distance" placeholder="Insira a distância">
+            </div>
+
+            <div class="form-group">
+                <label for="height">Altura:</label>
+                <input type="number" id="height" name="height" placeholder="Insira a altura">
+            </div>
+
+            <div class="buttons">
+                <button class="blob-btn" id="buttoncalcular" onclick="calculate()">
+                  Calcular
+                  <span class="blob-btn__inner">
+                    <span class="blob-btn__blobs">
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                    </span>
+                  </span>
+                </button>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                  <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="inputField">Resultado:</label>
+                    <div class="console--area">...</div>
+
+                    <label for="outputUnit">Converter resultado para:</label>
+                    <select id="outputUnit" name="outputUnit" onchange="updateResultUnit()">
+                        <option value="original">Manter Unidade Original</option>
+                        <option value="cm">Centímetros (cm)</option>
+                        <option value="m">Metros (m)</option>
+                        <option value="mm">Milímetros (mm)</option>
+                    </select>
+                    
+                    <div id="imagemEspelho"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
+
