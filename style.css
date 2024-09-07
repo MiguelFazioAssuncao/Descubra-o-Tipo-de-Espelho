@@ -251,6 +251,11 @@ svg {
   margin-bottom: 5%;
 }
 
+#imagemEspelho img{
+  height: 300px;
+  width: 50%;
+}
+
 @keyframes inicio {
   0% {
       margin-top: -200px;
